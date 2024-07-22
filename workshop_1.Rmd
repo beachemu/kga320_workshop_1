@@ -21,7 +21,11 @@ knitr::opts_chunk$set(error = TRUE)
 
 ### \n
 
-Hey there, **KGA320**! Today, we're diving into a tool that's revolutionised geography and beyond for the past 30 years: **R**. While creating statistical analyses in a coding language might seem daunting, you'll soon see how R makes our lives easier and more versatile. In fact, we wrote this entire workshop using R! \### What is R? [R](https://www.r-project.org/about.html) is a programming language built especially for statistics. It's become so ubiquitous that you'd be hard-pressed to find a statistician or scientist who doesn't use it. Why? Because it makes our analysis repeatable. Want someone to check your work? Just send them your code and dataset. Simple!
+Hey there, **KGA320**! Today, we're diving into a tool that's revolutionised geography and beyond for the past 30 years: **R**. While creating statistical analyses in a coding language might seem daunting, you'll soon see how R makes our lives easier and more versatile. In fact, we wrote this entire workshop using R!
+
+### What is R? 
+
+[R](https://www.r-project.org/about.html) is a programming language built especially for statistics. It's become so ubiquitous that you'd be hard-pressed to find a statistician or scientist who doesn't use it. Why? Because it makes our analysis repeatable. Want someone to check your work? Just send them your code and dataset. Simple!
 
 Usually, R users interact with the language through [RStudio](https://posit.co/download/rstudio-desktop/). For simplicity's sake, we're hosting an instance on R over pages for each workshop. You'll see neat little coding blocks like this:
 
