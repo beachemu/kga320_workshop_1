@@ -1,0 +1,234 @@
+---
+title: "Observations I"
+author: "KGA320: Our Changing Climate"
+date: "Semester 2 2024"
+output: 
+  learnr::tutorial:
+    theme: lumen
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(ggplot2)
+
+source_files_directory <- './data'
+
+knitr::opts_chunk$set(error = TRUE)
+```
+
+## Introduction: R and Data Wrangling
+
+### \n
+
+Hey there, **KGA320**! Today, we're diving into a tool that's revolutionised geography and beyond for the past 30 years: **R**. While creating statistical analyses in a coding language might seem daunting, you'll soon see how R makes our lives easier and more versatile. In fact, we wrote this entire workshop using R! \### What is R? [R](https://www.r-project.org/about.html) is a programming language built especially for statistics. It's become so ubiquitous that you'd be hard-pressed to find a statistician or scientist who doesn't use it. Why? Because it makes our analysis repeatable. Want someone to check your work? Just send them your code and dataset. Simple!
+
+Usually, R users interact with the language through [RStudio](https://posit.co/download/rstudio-desktop/). For simplicity's sake, we're hosting an instance on R over pages for each workshop. You'll see neat little coding blocks like this:
+
+```{r example, exercise=TRUE, exercise.eval=TRUE}
+# This simple line of code prints out "Hello World!"
+print("Hello World!")
+```
+
+```{r example-hint}
+print("Hello World!")
+```
+
+> 💡 **Pro tip:** Click the "Hint" button if you're ever stuck, or click "Start Over" to start from scratch.
+
+> 🔥 **Important:** You cannot save your work on this webpage. If you create something you want to keep, save it to your computer!
+
+Now, you might be wondering...
+
+> 🤔 **Why aren't we using RStudio this semester?**
+>
+> -   We want to ensure everyone has the same experience with R, regardless of their computer setup.
+> -   Different laptops and operating systems can introduce complications that might distract from learning to code.
+> -   Our goal is to keep things simple and focus on the joy of coding!
+
+Don't worry, though - if you're curious about RStudio:
+
+1.  UTAS computers have RStudio installed.
+2.  We've shared the source code for these workshops on MyLo.
+3.  Feel free to explore RStudio in your own time!
+
+### Data Wrangling
+
+Before we can make pretty graphs, we need data! Climate scientists have a wealth of information at their fingertips, from paleoclimatology to modern measurements. For this workshop, we'll focus on drought measures and historical daily temperature data for the Barossa Valley, northeast of Adelaide.
+
+**Data wrangling** is the process of preparing our various data sources for analysis. In creating this workshop, Ben has already done some wrangling to get this data into a format you will probably be familiar with: a CSV file. This pre-wrangling saves us some time, but it's still crucial to familiarise yourself with the data:
+
+> 💡 **Pro Tip:** Download the CSV files from the MyLo workshop page and open them in Excel or another spreadsheet app. This allows you to:
+>
+> -   Scroll through the file to spot missing data or obvious problems.
+> -   Check headers for available variables and units of measurement.
+> -   Get a general feel for your dataset.
+
+Viewing our data in Excel is convenient for these initial checks. Once you're satisfied with your data overview, it's time to load it into R:
+
+```{r load_data, exercise=TRUE}
+ # Load Barossa historical climate data
+barossa_data <- read.csv("data/barossa_1951-2014.csv")
+```
+
+Let's break this down:
+
+-   `read.csv()` is a **function** that reads our CSV files.
+-   We're saving the data into a variable `barossa_data` using `<-`.
+-   These variables are now containers we can access throughout our session.
+
+To check if it worked, we can use the `str()` function:
+
+```{r check_load, exercise=TRUE, exercise.setup="load_data"}
+str(barossa_data) # Show the structure of the data frame.
+cat("success!") # Print "success!"
+```
+
+Using `str(barossa_data)`, we have created an output showing the structure of `paleo_data` in R.
+
+### We have wrangled, now what?
+
+#### Basic Inferential Statistics
+
+Before diving into R's statistical prowess, let's refresh our memory on some key concepts. We'll use the example dataset $[1, 2, 3, 5]$ to illustrate:
+
+-   **Mean:** The average. Sum everything up and divide by the number of items. $\text{Mean} = \frac{1 + 2 + 3 + 5}{4} = 2.75$.
+-   **Median:** The middle value when data is sorted. With an even number of items, we average the two middle values. $\text{Median} = \frac{2 + 3}{2} = 2.5$.
+-   **Standard Deviation:** A measure of spread. It's a bit trickier:
+    1.  Calculate the difference of each value from the mean and square it: $[3.0625, 0.5625, 0.0625, 5.0625]$.
+    2.  Find the average of these squares (the variance): $\frac{3.0625 + 0.5625 + 0.0625 + 5.0625}{4} = 2.1875$.
+    3.  Take the square root of the variance: $\sqrt{2.1875} \approx 1.48$.
+
+Whew! That's a lot of work by hand. It may have been a while since you've seen these definitions.
+
+The good news? R makes these calculations a breeze. Let's find the mean, median, and standard deviation of the `tasmax` column in our `historical_data`:
+
+```{r inferential_stats, exercise=TRUE, exercise.setup="load_data"}
+# Calculate statistics for tasmax
+mean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)
+median_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)
+sd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)
+
+# Print results
+cat("Mean:", mean_tasmax, "\n")
+cat("Median:", median_tasmax, "\n")
+cat("Standard Deviation:", sd_tasmax, "\n")
+```
+
+Note the `na.rm = TRUE` argument. This tells R to ignore missing values (NAs) in our data. Now is a good time to start playing with variables. See if you can modify the code above to find the descriptive statistics for precipitation, `pr`.
+
+### Deep breath
+
+Let's take a quick breather. If you're new to programming, that was a lot to take in. Pat yourself on the back for making it this far!
+
+We've introduced many new terms and techniques. If any **bolded terms** are unfamiliar, jot them down with their definitions. Keep this list handy for revision - we'll use these words frequently in upcoming workshops.
+
+#### Why are we so strict with the language so far?
+
+We want to ensure we all speak the same language over the following few workshops, so learning the key terms will be essential. Clear communication is crucial in a field with constant streams of new information. When we all use the same terminology, it's easier to:
+
+1.  Understand each other's work.
+2.  Build upon existing knowledge.
+3.  Avoid misinterpretations that could lead to errors.
+
+So, while we might not use much slang, we'll use plenty of scientific lingo. Think of it as learning a new language - the language of data science!
+
+#### Data Visualisation with ggplot2
+
+Now for the fun part: visualisation! We'll use **ggplot**, a powerful plotting library built as a part of the [tidyverse](https://www.tidyverse.org/). First, let's load it:
+
+```{r call_libraries, exercise=TRUE, exercise.setup="inferential_stats"}
+library(ggplot2)
+```
+
+ggplot uses the "grammar of graphics" - we build plots layer by layer. Here's a box plot of Barossa Valley's maximum temperature using the descriptive statistics we calculated previously.
+
+First, we'll create a summary data frame:
+
+```{r summary, exercise=TRUE, exercise.setup="call_libraries"}
+summary_data <- data.frame(
+  ymin = mean_tasmax - 1.5 * sd_tasmax,
+  lower = mean_tasmax - sd_tasmax,
+  y = mean_tasmax,
+  upper = mean_tasmax + sd_tasmax,
+  ymax = mean_tasmax + 1.5 * sd_tasmax
+)
+```
+
+This data frame contains the key values for our boxplot: the minimum, lower quartile, median, upper quartile, and maximum. We've used our calculated mean and standard deviation from earlier to calculate these values.
+
+Now, let's create the boxplot:
+
+```{r plotting, exercise=TRUE, exercise.setup="summary"}
+# Create a simplified boxplot
+ggplot(summary_data, aes(x = "Max Temp", y = y)) +
+  geom_boxplot(aes(ymin = ymin, lower = lower, middle = y, upper = upper, ymax = ymax),
+               stat = "identity", fill = "lightblue", width = 0.5) +
+  geom_point(aes(y = median_tasmax), color = "red", size = 3) +
+  ggtitle("Distribution of Maximum Temperatures in Barossa Valley (1951-2014)") +
+  ylab("Maximum Temperature (°C)") +
+  xlab("") +
+  theme_minimal()
+```
+
+This might look dense, but there's a logic to how the graph is built. Let's break it down using the grammar of graphics:
+
+- `ggplot(summary_data, aes(x = "Max Temp", y = y))`:
+    - We start the plot with `ggplot`, using our `summary_data`.
+    - We set a fixed x-value ("Max Temp") and use our calculated mean for y.
+- `geom_boxplot(...)`:
+    - This creates the boxplot using our summary statistics.
+    - `stat = "identity"` tells ggplot to use our provided values directly.
+    - We set the fill colour to light blue and adjusted the width.
+- `geom_point(...)`:
+    - This adds a red point to represent the median temperature.
+- `ggtitle(...)`:
+    - We give our figure a descriptive title.
+    - **Always do this!** It helps others (and future you) understand the plot.
+- `ylab(...)` and `xlab("")`:
+    - We label the y-axis with the variable name and units.
+    - We leave the x-axis label blank as we only have one category.
+    - **Always label your axes!** It's crucial for interpretation and accessibility.
+- `theme_minimal()`:
+    - This applies a clean, minimal theme to our plot.
+
+This approach gives us a representative boxplot without needing the full dataset, which is great for quick visualisations or when working with large datasets.
+
+Want to modify this plot? Try changing the colours, adding more points, or adjusting the theme. For example, you could add a point for the mean:
+
+```{r}
+geom_point(aes(y = mean_tasmax), color = "blue", size = 3, shape = "diamond")
+```
+
+> 💡 **Pro Tip:** Check out this [ggplot cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf). Save it somewhere handy and refer to it often!
+
+Remember, the grammar of graphics is great for goofballs like us! With a few tweaks, you can create all sorts of unique visualisations. Keep practising, and soon you'll be a ggplot pro!
+
+## Workshop: Data Visualization and Basic Statistics
+
+### Summary of introduction
+
+### Exercises
+
+-   Multiple choice questions on code in previous examples.
+
+-   lmgttfy.com joke in the exercises.
+
+    -   Some method that isn't entirely explained
+    -   An "ok, I REALLY don't get it button".
+
+-   trying out different records.
+
+-   questions about using different measures of temperature in different contexts, how do you interpret this?
+
+-   finding extreme weather events.
+
+### Bonus Content: Heat Waves!
+
+-   calculating heat waves.
+-   describe some statistical methods for identifying heat waves.
+-   Can you do this with R and a bit of elbow grease?
+
+### Playground
+
+try out any ideas here! or try out R on desktop.
