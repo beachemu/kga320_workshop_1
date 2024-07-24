@@ -14,6 +14,7 @@ jobs:
       - name: Install dependencies
         run:
           install.packages(c("remotes", "rsconnect", "learnr", "ggplot2"))
+          
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Deploy to shinyapps.io
@@ -25,5 +26,6 @@ jobs:
           rsconnect::setAccountInfo(name = Sys.getenv("SHINYAPPS_ACCOUNT"),
                                     token = Sys.getenv("SHINYAPPS_TOKEN"),
                                     secret = Sys.getenv("SHINYAPPS_SECRET"))
+                                    
           rsconnect::deployApp(appName = "workshop_1")
         shell: Rscript {0}
