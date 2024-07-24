@@ -221,12 +221,34 @@ function:</p>
 <div class="tutorial-exercise" data-label="check_load"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<pre class="text"><code>str(barossa_data) # Show the structure of the data frame.
-cat(&quot;success!&quot;) # Print &quot;success!&quot;</code></pre>
+<pre class="text"><code>str(barossa_data) # Show the structure of the data frame.</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <p>Using <code>str(barossa_data)</code>, we have created an output
-showing the structure of <code>paleo_data</code> in R.</p>
+showing that <code>barossa_data</code> is a <code>data.frame</code>,
+basically a table, which has collected 23360 observations over 4
+variables. We see each of therse variables listed with a type, and some
+example values. When we are making calculations, we always want to be
+working with variables classed as <code>num</code>, R has recognised
+them as numbers that can be manipulated.</p>
+<p>It can be hard to guess what a variable is based just on it’s name,
+usually we pair a data set with a dictionary or documentation to explain
+what a variable is measuring, the units of measurement or type of
+variable, and any context we might need. For example, here’s the data
+dictionary for <code>barossa_data</code>:</p>
+<ul>
+<li><p><code>time</code> (<strong>unit</strong>: date,
+<strong>type</strong>: <code>char</code>): Date of measurement for
+weather data, stored as a string of format “YYYY-MM-DD”.</p></li>
+<li><p><code>tasmin</code> (<strong>unit</strong>: °C,
+<strong>type</strong>: <code>num</code>): Daily minimum near-surface air
+temperature.</p></li>
+<li><p><code>tasmax</code> (<strong>unit</strong>: °C,
+<strong>type</strong>: <code>num</code>): Daily maximum near-surface air
+temperature.</p></li>
+<li><p><code>pr</code> (<strong>unit</strong>: mm,
+<strong>type</strong>: <code>num</code>): Daily precipitation.</p></li>
+</ul>
 </div>
 <div id="section-we-have-wrangled-now-what" class="section level3">
 <h3>We have wrangled, now what?</h3>
@@ -270,15 +292,19 @@ median_tasmax &lt;- median(barossa_data$tasmax, na.rm = TRUE)
 sd_tasmax &lt;- sd(barossa_data$tasmax, na.rm = TRUE)
 
 # Print results
-cat(&quot;Mean:&quot;, mean_tasmax, &quot;\n&quot;)
+cat(&quot;Mean:&quot;, mean_tasmax, &quot;\n&quot;) # meeeooowww!
 cat(&quot;Median:&quot;, median_tasmax, &quot;\n&quot;)
 cat(&quot;Standard Deviation:&quot;, sd_tasmax, &quot;\n&quot;)</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-<p>Note the <code>na.rm = TRUE</code> argument. This tells R to ignore
-missing values (NAs) in our data. Now is a good time to start playing
-with variables. See if you can modify the code above to find the
-descriptive statistics for precipitation, <code>pr</code>.</p>
+<p>The function <code>cat</code> merges it’s inputs into a single
+<strong>string</strong> (words and characters, <code>"Mean:"</code> is a
+string in the above code for example), and sends it to the output.
+<code>"\n"</code> is a special command in a string that we use to create
+a new line. Also, note the <code>na.rm = TRUE</code> argument. This
+tells R to ignore missing values (NAs) in our data. Now is a good time
+to start playing with variables. See if you can modify the code above to
+find the descriptive statistics for precipitation, <code>pr</code>.</p>
 </div>
 </div>
 <div id="section-deep-breath" class="section level3">
@@ -331,9 +357,18 @@ data-pipe="|&gt;">
   y = mean_tasmax,
   upper = mean_tasmax + sd_tasmax,
   ymax = mean_tasmax + 1.5 * sd_tasmax
-)</code></pre>
+)
+
+str(summary_data)</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
+<blockquote>
+<p>❓ <strong>Hint:</strong> Remember earlier we described data frames
+as essentially R’s version of tables. Here we are collecting the 5
+variables <code>ymin, lower, y, upper, ymax</code>, as variables that
+are stored in <code>summary_data</code>. Remember, we can use
+<code>str(summary_data)</code> to see what this looks like.</p>
+</blockquote>
 <p>This data frame contains the key values for our boxplot: the minimum,
 lower quartile, median, upper quartile, and maximum. We’ve used our
 calculated mean and standard deviation from earlier to calculate these
@@ -573,7 +608,7 @@ learnr:::store_exercise_cache(structure(list(label = "check_load", global_setup 
     label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
-        engine = "r"), list(label = "check_load", code = "str(barossa_data) # Show the structure of the data frame.\ncat(\"success!\") # Print \"success!\"", 
+        engine = "r"), list(label = "check_load", code = "str(barossa_data) # Show the structure of the data frame.", 
         opts = list(label = "\"check_load\"", exercise = "TRUE", 
             exercise.setup = "\"load_data\""), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
@@ -594,9 +629,8 @@ learnr:::store_exercise_cache(structure(list(label = "check_load", global_setup 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, label = "check_load", exercise = TRUE, 
-        exercise.setup = "load_data", code = c("str(barossa_data) # Show the structure of the data frame.", 
-        "cat(\"success!\") # Print \"success!\""), out.width.px = 624, 
-        out.height.px = 384, params.src = "check_load, exercise=TRUE, exercise.setup=\"load_data\"", 
+        exercise.setup = "load_data", code = "str(barossa_data) # Show the structure of the data frame.", 
+        out.width.px = 624, out.height.px = 384, params.src = "check_load, exercise=TRUE, exercise.setup=\"load_data\"", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
@@ -617,7 +651,7 @@ learnr:::store_exercise_cache(structure(list(label = "inferential_stats", global
     label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
-        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
+        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
         opts = list(label = "\"inferential_stats\"", exercise = "TRUE", 
             exercise.setup = "\"load_data\""), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
@@ -642,7 +676,7 @@ learnr:::store_exercise_cache(structure(list(label = "inferential_stats", global
         "mean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)", 
         "median_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)", 
         "sd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)", 
-        "", "# Print results", "cat(\"Mean:\", mean_tasmax, \"\\n\")", 
+        "", "# Print results", "cat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!", 
         "cat(\"Median:\", median_tasmax, \"\\n\")", "cat(\"Standard Deviation:\", sd_tasmax, \"\\n\")"
         ), out.width.px = 624, out.height.px = 384, params.src = "inferential_stats, exercise=TRUE, exercise.setup=\"load_data\"", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
@@ -662,10 +696,10 @@ output$`tutorial-exercise-call_libraries-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "call_libraries", global_setup = structure(c("library(learnr)", 
 "library(ggplot2)", "", "source_files_directory <- './data'", 
 "", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
+    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
-        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
+        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
         opts = list(label = "\"inferential_stats\"", exercise = "TRUE", 
             exercise.setup = "\"load_data\""), engine = "r"), 
         list(label = "call_libraries", code = "library(ggplot2)", 
@@ -708,16 +742,16 @@ output$`tutorial-exercise-summary-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "summary", global_setup = structure(c("library(learnr)", 
 "library(ggplot2)", "", "source_files_directory <- './data'", 
 "", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)", 
+    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
-        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
+        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
         opts = list(label = "\"inferential_stats\"", exercise = "TRUE", 
             exercise.setup = "\"load_data\""), engine = "r"), 
         list(label = "call_libraries", code = "library(ggplot2)", 
             opts = list(label = "\"call_libraries\"", exercise = "TRUE", 
                 exercise.setup = "\"inferential_stats\""), engine = "r"), 
-        list(label = "summary", code = "summary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)", 
+        list(label = "summary", code = "summary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)\n\nstr(summary_data)", 
             opts = list(label = "\"summary\"", exercise = "TRUE", 
                 exercise.setup = "\"call_libraries\""), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
@@ -741,8 +775,8 @@ learnr:::store_exercise_cache(structure(list(label = "summary", global_setup = s
         exercise.setup = "call_libraries", code = c("summary_data <- data.frame(", 
         "  ymin = mean_tasmax - 1.5 * sd_tasmax,", "  lower = mean_tasmax - sd_tasmax,", 
         "  y = mean_tasmax,", "  upper = mean_tasmax + sd_tasmax,", 
-        "  ymax = mean_tasmax + 1.5 * sd_tasmax", ")"), out.width.px = 624, 
-        out.height.px = 384, params.src = "summary, exercise=TRUE, exercise.setup=\"call_libraries\"", 
+        "  ymax = mean_tasmax + 1.5 * sd_tasmax", ")", "", "str(summary_data)"
+        ), out.width.px = 624, out.height.px = 384, params.src = "summary, exercise=TRUE, exercise.setup=\"call_libraries\"", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
@@ -760,16 +794,16 @@ output$`tutorial-exercise-plotting-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "plotting", global_setup = structure(c("library(learnr)", 
 "library(ggplot2)", "", "source_files_directory <- './data'", 
 "", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)\nsummary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)", 
+    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)\nsummary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)\n\nstr(summary_data)", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
-        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
+        engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\") # meeeooowww!\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
         opts = list(label = "\"inferential_stats\"", exercise = "TRUE", 
             exercise.setup = "\"load_data\""), engine = "r"), 
         list(label = "call_libraries", code = "library(ggplot2)", 
             opts = list(label = "\"call_libraries\"", exercise = "TRUE", 
                 exercise.setup = "\"inferential_stats\""), engine = "r"), 
-        list(label = "summary", code = "summary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)", 
+        list(label = "summary", code = "summary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)\n\nstr(summary_data)", 
             opts = list(label = "\"summary\"", exercise = "TRUE", 
                 exercise.setup = "\"call_libraries\""), engine = "r"), 
         list(label = "plotting", code = "# Create a simplified boxplot\nggplot(summary_data, aes(x = \"Max Temp\", y = y)) +\n  geom_boxplot(aes(ymin = ymin, lower = lower, middle = y, upper = upper, ymax = ymax),\n               stat = \"identity\", fill = \"lightblue\", width = 0.5) +\n  geom_point(aes(y = median_tasmax), color = \"red\", size = 3) +\n  ggtitle(\"Distribution of Maximum Temperatures in Barossa Valley (1951-2014)\") +\n  ylab(\"Maximum Temperature (°C)\") +\n  xlab(\"\") +\n  theme_minimal()", 

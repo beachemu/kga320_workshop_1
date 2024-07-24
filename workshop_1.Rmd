@@ -23,7 +23,7 @@ knitr::opts_chunk$set(error = TRUE)
 
 Hey there, **KGA320**! Today, we're diving into a tool that's revolutionised geography and beyond for the past 30 years: **R**. While creating statistical analyses in a coding language might seem daunting, you'll soon see how R makes our lives easier and more versatile. In fact, we wrote this entire workshop using R!
 
-### What is R? 
+### What is R?
 
 [R](https://www.r-project.org/about.html) is a programming language built especially for statistics. It's become so ubiquitous that you'd be hard-pressed to find a statistician or scientist who doesn't use it. Why? Because it makes our analysis repeatable. Want someone to check your work? Just send them your code and dataset. Simple!
 
@@ -85,10 +85,19 @@ To check if it worked, we can use the `str()` function:
 
 ```{r check_load, exercise=TRUE, exercise.setup="load_data"}
 str(barossa_data) # Show the structure of the data frame.
-cat("success!") # Print "success!"
 ```
 
-Using `str(barossa_data)`, we have created an output showing the structure of `paleo_data` in R.
+Using `str(barossa_data)`, we have created an output showing that `barossa_data` is a `data.frame`, basically a table, which has collected 23360 observations over 4 variables. We see each of therse variables listed with a type, and some example values. When we are making calculations, we always want to be working with variables classed as `num`, R has recognised them as numbers that can be manipulated.
+
+It can be hard to guess what a variable is based just on it's name, usually we pair a data set with a dictionary or documentation to explain what a variable is measuring, the units of measurement or type of variable, and any context we might need. For example, here's the data dictionary for `barossa_data`:
+
+-   `time` (**unit**: date, **type**: `char`): Date of measurement for weather data, stored as a string of format "YYYY-MM-DD".
+
+-   `tasmin` (**unit**: °C, **type**: `num`): Daily minimum near-surface air temperature.
+
+-   `tasmax` (**unit**: °C, **type**: `num`): Daily maximum near-surface air temperature.
+
+-   `pr` (**unit**: mm, **type**: `num`): Daily precipitation.
 
 ### We have wrangled, now what?
 
@@ -114,12 +123,12 @@ median_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)
 sd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)
 
 # Print results
-cat("Mean:", mean_tasmax, "\n")
+cat("Mean:", mean_tasmax, "\n") # meeeooowww!
 cat("Median:", median_tasmax, "\n")
 cat("Standard Deviation:", sd_tasmax, "\n")
 ```
 
-Note the `na.rm = TRUE` argument. This tells R to ignore missing values (NAs) in our data. Now is a good time to start playing with variables. See if you can modify the code above to find the descriptive statistics for precipitation, `pr`.
+The function `cat` merges it's inputs into a single **string** (words and characters, `"Mean:"` is a string in the above code for example), and sends it to the output. `"\n"` is a special command in a string that we use to create a new line. Also, note the `na.rm = TRUE` argument. This tells R to ignore missing values (NAs) in our data. Now is a good time to start playing with variables. See if you can modify the code above to find the descriptive statistics for precipitation, `pr`.
 
 ### Deep breath
 
@@ -159,6 +168,8 @@ summary_data <- data.frame(
 )
 ```
 
+> ❓ **Hint:** Remember earlier we described data frames as essentially R's version of tables. Here we are collecting the 5 variables `ymin, lower, y, upper, ymax`, as variables that are stored in `summary_data`. Remember, we can use `str(summary_data)` to see what this looks like.
+
 This data frame contains the key values for our boxplot: the minimum, lower quartile, median, upper quartile, and maximum. We've used our calculated mean and standard deviation from earlier to calculate these values.
 
 Now, let's create the boxplot:
@@ -177,24 +188,24 @@ ggplot(summary_data, aes(x = "Max Temp", y = y)) +
 
 This might look dense, but there's a logic to how the graph is built. Let's break it down using the grammar of graphics:
 
-- `ggplot(summary_data, aes(x = "Max Temp", y = y))`:
-    - We start the plot with `ggplot`, using our `summary_data`.
-    - We set a fixed x-value ("Max Temp") and use our calculated mean for y.
-- `geom_boxplot(...)`:
-    - This creates the boxplot using our summary statistics.
-    - `stat = "identity"` tells ggplot to use our provided values directly.
-    - We set the fill colour to light blue and adjusted the width.
-- `geom_point(...)`:
-    - This adds a red point to represent the median temperature.
-- `ggtitle(...)`:
-    - We give our figure a descriptive title.
-    - **Always do this!** It helps others (and future you) understand the plot.
-- `ylab(...)` and `xlab("")`:
-    - We label the y-axis with the variable name and units.
-    - We leave the x-axis label blank as we only have one category.
-    - **Always label your axes!** It's crucial for interpretation and accessibility.
-- `theme_minimal()`:
-    - This applies a clean, minimal theme to our plot.
+-   `ggplot(summary_data, aes(x = "Max Temp", y = y))`:
+    -   We start the plot with `ggplot`, using our `summary_data`.
+    -   We set a fixed x-value ("Max Temp") and use our calculated mean for y.
+-   `geom_boxplot(...)`:
+    -   This creates the boxplot using our summary statistics.
+    -   `stat = "identity"` tells ggplot to use our provided values directly.
+    -   We set the fill colour to light blue and adjusted the width.
+-   `geom_point(...)`:
+    -   This adds a red point to represent the median temperature.
+-   `ggtitle(...)`:
+    -   We give our figure a descriptive title.
+    -   **Always do this!** It helps others (and future you) understand the plot.
+-   `ylab(...)` and `xlab("")`:
+    -   We label the y-axis with the variable name and units.
+    -   We leave the x-axis label blank as we only have one category.
+    -   **Always label your axes!** It's crucial for interpretation and accessibility.
+-   `theme_minimal()`:
+    -   This applies a clean, minimal theme to our plot.
 
 This approach gives us a representative boxplot without needing the full dataset, which is great for quick visualisations or when working with large datasets.
 
