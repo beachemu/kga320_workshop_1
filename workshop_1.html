@@ -446,9 +446,6 @@ Keep practising, and soon you’ll be a ggplot pro!</p>
 <div id="section-workshop-data-visualization-and-basic-statistics"
 class="section level2">
 <h2>Workshop: Data Visualization and Basic Statistics</h2>
-<div id="section-section-1" class="section level3">
-<h3></h3>
-</div>
 <div id="section-testing-your-knowledge" class="section level3">
 <h3>Testing your knowledge</h3>
 <p>Before we start coding, let’s test your knowledge of R and some basic
@@ -536,7 +533,8 @@ function as a string. Try using the function from scratch here:</p>
 <div class="tutorial-exercise" data-label="list_files"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<pre class="text"><code># Use list.files() to find the data to use in this workshop.</code></pre>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="list_files-hint-1"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -546,7 +544,7 @@ data-lines="0" data-pipe="|&gt;">
 <div class="tutorial-exercise-support" data-label="list_files-hint-2"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<pre class="text"><code>list.files(&quot;data/&quot;)</code></pre>
+<pre class="text"><code>list.files(&quot;./data&quot;)</code></pre>
 </div>
 <blockquote>
 <p>💡 <strong>Pro tip:</strong> Click the “Hint” button if you’re ever
@@ -555,19 +553,18 @@ stuck, or click “Start Over” to start from scratch.</p>
 <p>We can see a data file is available for each region and one for the
 Barossa Valley that we used in the introduction. Try loading one of
 these data sets and checking its structure here.</p>
-<div class="tutorial-exercise" data-label="load_data"
+<div class="tutorial-exercise" data-label="load_data_ex"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<pre class="text"><code> # Load Barossa historical climate data
-barossa_data &lt;- read.csv(&quot;data/barossa_1951-2014.csv&quot;)</code></pre>
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<pre class="text"><code># Read in a CSV file from the list chosen above.</code></pre>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-<div class="tutorial-exercise-support" data-label="load_data-hint-1"
+<div class="tutorial-exercise-support" data-label="load_data_ex-hint-1"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>read.csv()</code></pre>
 </div>
-<div class="tutorial-exercise-support" data-label="load_data-hint-2"
+<div class="tutorial-exercise-support" data-label="load_data_ex-hint-2"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>read.csv(&quot;data/&quot;)</code></pre>
@@ -580,7 +577,8 @@ output from the code box.</p>
 <div class="tutorial-exercise" data-label="basic_stats"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<pre class="text"><code># Calculate and print some basic statistics for your data set.</code></pre>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="basic_stats-hint-1"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -623,7 +621,8 @@ made to visualise aspects of the data?</p>
 <div class="tutorial-exercise" data-label="plot_histogram"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<pre class="text"><code># Plot a labelled and titled histogram of a variable in your data set. </code></pre>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <div class="tutorial-exercise-support"
 data-label="plot_histogram-hint-1" data-completion="1"
@@ -654,14 +653,16 @@ below.</p>
 <div class="tutorial-exercise" data-label="calculate_anomaly"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<pre class="text"><code># Calculate the anomalies of variables in your data set.</code></pre>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <p>Now, try using some of the plots we have learned so far to visualise
 the anomaly.</p>
 <div class="tutorial-exercise" data-label="plot_anomaly"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<pre class="text"><code># Visualise the anomaly of your variables.</code></pre>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="plot_anomaly-hint-1"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -693,7 +694,8 @@ variables on the y-axis. Try using <code>geom_point</code>!</p>
 <div class="tutorial-exercise" data-label="time_series"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<pre class="text"><code># Create a time series plot.</code></pre>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="time_series-hint-1"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -717,23 +719,28 @@ far, use the code box below.</p>
 <div class="tutorial-exercise" data-label="playground"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-<pre class="r"><code># Plot trends
-ggplot(barossa_data, aes(x = time, y = tasmax)) +  # Specify the data and mapping of aesthetics
-  geom_point() +  # Add a line plot layer
-  ggtitle(&quot;trend of maximum temperature (1951-2014)&quot;) +  # add a title to the plot
-  xlab(&quot;Year&quot;) +  # Label the x-axis
-  ylab(&quot;maximum temperature (°c)&quot;)  # label the y-axis</code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): object &#39;barossa_data&#39; not found</code></pre>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 library(ggplot2)
+library(rlang)
 
 source_files_directory <- './data'
+setwd('.')
 
-knitr::opts_chunk$set(error = TRUE)
+work_env <<- new.env(parent = emptyenv())
+
+exercise.checker <- function(user_code, ...) {
+  # Run the submitted code
+  eval(parse(text = user_code))
+  list2env(as.list(environment(), all.names = TRUE), envir = work_env)
+  return(list(message = "Code executed", correct = TRUE))
+}
+
+tutorial_options(exercise.checker = exercise.checker)
+
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -766,10 +773,14 @@ output$`tutorial-exercise-example-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "example", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "example", code = "# This simple line of code prints out \"Hello World!\"\nprint(\"Hello World!\")", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
+    chunks = list(list(label = "example", code = "# This simple line of code prints out \"Hello World!\"\nprint(\"Hello World!\")", 
         opts = list(label = "\"example\"", exercise = "TRUE", 
             exercise.eval = "TRUE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
@@ -786,16 +797,17 @@ learnr:::store_exercise_cache(structure(list(label = "example", global_setup = s
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "example", exercise = TRUE, 
-        exercise.eval = TRUE, code = c("# This simple line of code prints out \"Hello World!\"", 
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "example", exercise = TRUE, exercise.eval = TRUE, 
+        code = c("# This simple line of code prints out \"Hello World!\"", 
         "print(\"Hello World!\")"), out.width.px = 624, out.height.px = 384, 
         params.src = "example, exercise=TRUE, exercise.eval=TRUE", 
-        fig.alt = NULL, fig.num = 0, exercise.df_print = "paged", 
-        exercise.checker = "NULL"), engine = "r", version = "4"), class = c("r", 
-"tutorial_exercise")))
+        fig.alt = NULL, fig.num = 0, exercise.df_print = "paged"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -808,10 +820,14 @@ output$`tutorial-exercise-load_data-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "load_data", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
+    chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, tests = NULL, options = list(
@@ -827,15 +843,15 @@ learnr:::store_exercise_cache(structure(list(label = "load_data", global_setup =
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "load_data", exercise = TRUE, 
-        code = c(" # Load Barossa historical climate data", "barossa_data <- read.csv(\"data/barossa_1951-2014.csv\")"
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "load_data", exercise = TRUE, code = c(" # Load Barossa historical climate data", 
+        "barossa_data <- read.csv(\"data/barossa_1951-2014.csv\")"
         ), out.width.px = 624, out.height.px = 384, params.src = "load_data, exercise=TRUE", 
-        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -848,9 +864,13 @@ output$`tutorial-exercise-check_load-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "check_load", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
         engine = "r"), list(label = "check_load", code = "str(barossa_data) # Show the structure of the data frame.", 
@@ -870,15 +890,15 @@ learnr:::store_exercise_cache(structure(list(label = "check_load", global_setup 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "check_load", exercise = TRUE, 
-        exercise.setup = "load_data", code = "str(barossa_data) # Show the structure of the data frame.", 
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "check_load", exercise = TRUE, exercise.setup = "load_data", 
+        code = "str(barossa_data) # Show the structure of the data frame.", 
         out.width.px = 624, out.height.px = 384, params.src = "check_load, exercise=TRUE, exercise.setup=\"load_data\"", 
-        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -891,9 +911,13 @@ output$`tutorial-exercise-inferential_stats-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "inferential_stats", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
         engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
@@ -913,20 +937,19 @@ learnr:::store_exercise_cache(structure(list(label = "inferential_stats", global
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "inferential_stats", exercise = TRUE, 
-        exercise.setup = "load_data", code = c("# Calculate statistics for tasmax", 
-        "mean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)", 
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "inferential_stats", exercise = TRUE, exercise.setup = "load_data", 
+        code = c("# Calculate statistics for tasmax", "mean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)", 
         "median_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)", 
         "sd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)", 
         "", "# Print results", "cat(\"Mean:\", mean_tasmax, \"\\n\")", 
         "cat(\"Median:\", median_tasmax, \"\\n\")", "cat(\"Standard Deviation:\", sd_tasmax, \"\\n\")"
         ), out.width.px = 624, out.height.px = 384, params.src = "inferential_stats, exercise=TRUE, exercise.setup=\"load_data\"", 
-        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -939,9 +962,13 @@ output$`tutorial-exercise-call_libraries-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "call_libraries", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
         engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
@@ -964,15 +991,15 @@ learnr:::store_exercise_cache(structure(list(label = "call_libraries", global_se
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "call_libraries", exercise = TRUE, 
-        exercise.setup = "inferential_stats", code = "library(ggplot2)", 
-        out.width.px = 624, out.height.px = 384, params.src = "call_libraries, exercise=TRUE, exercise.setup=\"inferential_stats\"", 
-        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "call_libraries", exercise = TRUE, exercise.setup = "inferential_stats", 
+        code = "library(ggplot2)", out.width.px = 624, out.height.px = 384, 
+        params.src = "call_libraries, exercise=TRUE, exercise.setup=\"inferential_stats\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -985,9 +1012,13 @@ output$`tutorial-exercise-summary-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "summary", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
         engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
@@ -1013,18 +1044,17 @@ learnr:::store_exercise_cache(structure(list(label = "summary", global_setup = s
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "summary", exercise = TRUE, 
-        exercise.setup = "call_libraries", code = c("summary_data <- data.frame(", 
-        "  ymin = mean_tasmax - 1.5 * sd_tasmax,", "  lower = mean_tasmax - sd_tasmax,", 
-        "  y = mean_tasmax,", "  upper = mean_tasmax + sd_tasmax,", 
-        "  ymax = mean_tasmax + 1.5 * sd_tasmax", ")"), out.width.px = 624, 
-        out.height.px = 384, params.src = "summary, exercise=TRUE, exercise.setup=\"call_libraries\"", 
-        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "summary", exercise = TRUE, exercise.setup = "call_libraries", 
+        code = c("summary_data <- data.frame(", "  ymin = mean_tasmax - 1.5 * sd_tasmax,", 
+        "  lower = mean_tasmax - sd_tasmax,", "  y = mean_tasmax,", 
+        "  upper = mean_tasmax + sd_tasmax,", "  ymax = mean_tasmax + 1.5 * sd_tasmax", 
+        ")"), out.width.px = 624, out.height.px = 384, params.src = "summary, exercise=TRUE, exercise.setup=\"call_libraries\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -1037,9 +1067,13 @@ output$`tutorial-exercise-plotting-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "plotting", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)\nsummary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")\n# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")\nlibrary(ggplot2)\nsummary_data <- data.frame(\n  ymin = mean_tasmax - 1.5 * sd_tasmax,\n  lower = mean_tasmax - sd_tasmax,\n  y = mean_tasmax,\n  upper = mean_tasmax + sd_tasmax,\n  ymax = mean_tasmax + 1.5 * sd_tasmax\n)", 
     chunks = list(list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
         opts = list(label = "\"load_data\"", exercise = "TRUE"), 
         engine = "r"), list(label = "inferential_stats", code = "# Calculate statistics for tasmax\nmean_tasmax <- mean(barossa_data$tasmax, na.rm = TRUE)\nmedian_tasmax <- median(barossa_data$tasmax, na.rm = TRUE)\nsd_tasmax <- sd(barossa_data$tasmax, na.rm = TRUE)\n\n# Print results\ncat(\"Mean:\", mean_tasmax, \"\\n\")\ncat(\"Median:\", median_tasmax, \"\\n\")\ncat(\"Standard Deviation:\", sd_tasmax, \"\\n\")", 
@@ -1068,12 +1102,12 @@ learnr:::store_exercise_cache(structure(list(label = "plotting", global_setup = 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "plotting", exercise = TRUE, 
-        exercise.setup = "summary", code = c("# Create a simplified boxplot", 
-        "ggplot(summary_data, aes(x = \"Max Temp\", y = y)) +", 
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "plotting", exercise = TRUE, exercise.setup = "summary", 
+        code = c("# Create a simplified boxplot", "ggplot(summary_data, aes(x = \"Max Temp\", y = y)) +", 
         "  geom_boxplot(aes(ymin = ymin, lower = lower, middle = y, upper = upper, ymax = ymax),", 
         "               stat = \"identity\", fill = \"lightblue\", width = 0.5) +", 
         "  geom_point(aes(y = median_tasmax), color = \"red\", size = 3) +", 
@@ -1081,24 +1115,23 @@ learnr:::store_exercise_cache(structure(list(label = "plotting", global_setup = 
         "  ylab(\"Maximum Temperature (°C)\") +", "  xlab(\"\") +", 
         "  theme_minimal()"), out.width.px = 624, out.height.px = 384, 
         params.src = "plotting, exercise=TRUE, exercise.setup=\"summary\"", 
-        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q_variables", 
     question = structure("What symbol is used to store a variable in R?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_37b9db9", 
+    "character")), answers = list(structure(list(id = "lnr_ans_7a94b81", 
         option = "=", value = "=", label = structure("=", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c2f6fef", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9424972", 
         option = "===", value = "===", label = structure("===", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_187808e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c6e316b", 
         option = "<<<", value = "<<<", label = structure("&lt;&lt;&lt;", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6301194", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_87d0c5b", 
         option = "<-", value = "<-", label = structure("&lt;-", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1109,7 +1142,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "q_variables-answer", question = "q_variables"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = FALSE, 
-    seed = 1375778048.35935, options = list()), class = c("learnr_radio", 
+    seed = 1729060031.69484, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
@@ -1117,16 +1150,16 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q_dataframes", 
     question = structure("What do we call variables that store datasets in R?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_81c7199", 
+    "character")), answers = list(structure(list(id = "lnr_ans_3a72e3b", 
         option = "Arrays", value = "Arrays", label = structure("Arrays", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c210b67", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_956e834", 
         option = "Boxes", value = "Boxes", label = structure("Boxes", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_60850db", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_139c808", 
         option = "Vectors", value = "Vectors", label = structure("Vectors", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3670594", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_68732a", 
         option = "Data frames", value = "Data frames", label = structure("Data frames", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1137,22 +1170,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "q_dataframes-answer", question = "q_dataframes"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = FALSE, 
-    seed = 187736518.912578, options = list()), class = c("learnr_radio", 
+    seed = 218671745.898173, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q_tasmin", question = structure("What type of data is stored in the tasmin variable?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_869c721", 
+"character")), answers = list(structure(list(id = "lnr_ans_c1e1531", 
     option = "Tasmanian miniatures", value = "Tasmanian miniatures", 
     label = structure("Tasmanian miniatures", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3e1193c", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d28b576", 
     option = "Minimum atmospheric temperature in the troposphere", 
     value = "Minimum atmospheric temperature in the troposphere", 
     label = structure("Minimum atmospheric temperature in the troposphere", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2ebc840", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1cea303", 
     option = "Minimum measured near-surface air temperature", 
     value = "Minimum measured near-surface air temperature", 
     label = structure("Minimum measured near-surface air temperature", html = TRUE, class = c("html", 
@@ -1164,7 +1197,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q_tasmin-answer", question = "q_tasmin"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = FALSE, seed = 543462000.246931, 
+    random_answer_order = TRUE, allow_retry = FALSE, seed = 1537282823.78415, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -1172,19 +1205,19 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q_stats", question = structure("What command would store the standard deviation of precipitation (pr) in a data frame called hobart_climate?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_ef23b92", 
+"character")), answers = list(structure(list(id = "lnr_ans_9318cd5", 
     option = "sd_pr = STDDEV(hobart_climate)", value = "sd_pr = STDDEV(hobart_climate)", 
     label = structure("sd_pr = STDDEV(hobart_climate)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4178c0b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9aa1174", 
     option = "sd_pr <- stddev(hobart_climate(pr))", value = "sd_pr <- stddev(hobart_climate(pr))", 
     label = structure("sd_pr &lt;- stddev(hobart_climate(pr))", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e9e083e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_63f314a", 
     option = "sd_pr <- hobart_climate[pr].sd()", value = "sd_pr <- hobart_climate[pr].sd()", 
     label = structure("sd_pr &lt;- hobart_climate[pr].sd()", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1199f3a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f45c2f4", 
     option = "sd_pr <- sd(hobart_climate$pr)", value = "sd_pr <- sd(hobart_climate$pr)", 
     label = structure("sd_pr &lt;- sd(hobart_climate$pr)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1195,23 +1228,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q_stats-answer", question = "q_stats"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = FALSE, seed = 365034575.330018, 
+    random_answer_order = TRUE, allow_retry = FALSE, seed = 623003276.709891, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q_plot", question = structure("What command would create a violin plot using ggplot? Hint: We didn’t show this type of plot in the introduction, but there’s a cheat sheet you can check to find the right answer!", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_fe8a780", 
+"character")), answers = list(structure(list(id = "lnr_ans_2cc9756", 
     option = "violin_plot()", value = "violin_plot()", label = structure("violin_plot()", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4ebd82", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_436f417", 
     option = "vplot()", value = "vplot()", label = structure("vplot()", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b6b914", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_266b596", 
     option = "ggplot + violin", value = "ggplot + violin", label = structure("ggplot + violin", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d1b69ee", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b1ad8a", 
     option = "geom_violin())", value = "geom_violin())", label = structure("geom_violin())", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1221,7 +1254,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q_plot-answer", question = "q_plot"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = FALSE, seed = 1559253654.27392, 
+    random_answer_order = TRUE, allow_retry = FALSE, seed = 15097449.4929697, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -1236,75 +1269,89 @@ output$`tutorial-exercise-list_files-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "list_files", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "list_files", code = "\n\n", opts = list(label = "\"list_files\"", 
-        exercise = "TRUE", excercise.setup = "\"call_libraries\""), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "list_files-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"list_files-setup\""), engine = "r"), 
+        list(label = "list_files", code = "# Use list.files() to find the data to use in this workshop.", 
+            opts = list(label = "\"list_files\"", exercise = "TRUE", 
+                excercise.setup = "\"list_files-setup\""), engine = "r")), 
+    code_check = NULL, error_check = NULL, check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "list_files-check")), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "list_files", exercise = TRUE, 
-        excercise.setup = "call_libraries", out.width.px = 624, 
-        out.height.px = 384, params.src = "list_files, exercise=TRUE, excercise.setup=\"call_libraries\"", 
-        fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "list_files", exercise = TRUE, excercise.setup = "list_files-setup", 
+        code = "# Use list.files() to find the data to use in this workshop.", 
+        out.width.px = 624, out.height.px = 384, params.src = "list_files, exercise=TRUE, excercise.setup=\"list_files-setup\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-load_data-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-load_data-code-editor`)), session)
-output$`tutorial-exercise-load_data-output` <- renderUI({
-  `tutorial-exercise-load_data-result`()
+`tutorial-exercise-load_data_ex-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-load_data_ex-code-editor`)), session)
+output$`tutorial-exercise-load_data_ex-output` <- renderUI({
+  `tutorial-exercise-load_data_ex-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::store_exercise_cache(structure(list(label = "load_data", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "load_data", code = " # Load Barossa historical climate data\nbarossa_data <- read.csv(\"data/barossa_1951-2014.csv\")", 
-        opts = list(label = "\"load_data\"", exercise = "TRUE"), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+learnr:::store_exercise_cache(structure(list(label = "load_data_ex", global_setup = structure(c("library(learnr)", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "load_data_ex-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"load_data_ex-setup\""), engine = "r"), 
+        list(label = "load_data_ex", code = "# Read in a CSV file from the list chosen above.", 
+            opts = list(label = "\"load_data_ex\"", exercise = "TRUE"), 
+            engine = "r")), code_check = NULL, error_check = NULL, 
+    check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "load_data_ex-check")), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "load_data", exercise = TRUE, 
-        excercise.setup = "list_files", code = c(" # Load Barossa historical climate data", 
-        "barossa_data <- read.csv(\"data/barossa_1951-2014.csv\")"
-        ), out.width.px = 624, out.height.px = 384, params.src = "load_data, exercise=TRUE, excercise.setup=\"list_files\"", 
-        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "load_data_ex", exercise = TRUE, code = "# Read in a CSV file from the list chosen above.", 
+        out.width.px = 624, out.height.px = 384, params.src = "load_data_ex, exercise=TRUE", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 
 
@@ -1317,34 +1364,42 @@ output$`tutorial-exercise-basic_stats-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "basic_stats", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "basic_stats", code = "\n\n", opts = list(label = "\"basic_stats\"", 
-        exercise = "TRUE", excercise.setup = "\"load_data\""), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "basic_stats-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"basic_stats-setup\""), engine = "r"), 
+        list(label = "basic_stats", code = "# Calculate and print some basic statistics for your data set.", 
+            opts = list(label = "\"basic_stats\"", exercise = "TRUE", 
+                excercise.setup = "\"list_files-setup\""), engine = "r")), 
+    code_check = NULL, error_check = NULL, check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "basic_stats-check")), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "basic_stats", exercise = TRUE, 
-        excercise.setup = "load_data", out.width.px = 624, out.height.px = 384, 
-        params.src = "basic_stats, exercise=TRUE, excercise.setup=\"load_data\"", 
-        fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "basic_stats", exercise = TRUE, excercise.setup = "list_files-setup", 
+        code = "# Calculate and print some basic statistics for your data set.", 
+        out.width.px = 624, out.height.px = 384, params.src = "basic_stats, exercise=TRUE, excercise.setup=\"list_files-setup\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 
 
@@ -1357,34 +1412,42 @@ output$`tutorial-exercise-plot_histogram-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "plot_histogram", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "plot_histogram", code = "\n\n", opts = list(
-        label = "\"plot_histogram\"", exercise = "TRUE", excercise.setup = "\"basic_stats\""), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "plot_histogram-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"plot_histogram-setup\""), engine = "r"), 
+        list(label = "plot_histogram", code = "# Plot a labelled and titled histogram of a variable in your data set. ", 
+            opts = list(label = "\"plot_histogram\"", exercise = "TRUE", 
+                excercise.setup = "\"list_files-setup\""), engine = "r")), 
+    code_check = NULL, error_check = NULL, check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "plot_histogram-check")), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "plot_histogram", exercise = TRUE, 
-        excercise.setup = "basic_stats", out.width.px = 624, 
-        out.height.px = 384, params.src = "plot_histogram, exercise=TRUE, excercise.setup=\"basic_stats\"", 
-        fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "plot_histogram", exercise = TRUE, excercise.setup = "list_files-setup", 
+        code = "# Plot a labelled and titled histogram of a variable in your data set. ", 
+        out.width.px = 624, out.height.px = 384, params.src = "plot_histogram, exercise=TRUE, excercise.setup=\"list_files-setup\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 
 
@@ -1397,34 +1460,42 @@ output$`tutorial-exercise-calculate_anomaly-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "calculate_anomaly", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "calculate_anomaly", code = "\n\n", opts = list(
-        label = "\"calculate_anomaly\"", exercise = "TRUE", excercise.setup = "\"plot_histogram\""), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "calculate_anomaly-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"calculate_anomaly-setup\""), engine = "r"), 
+        list(label = "calculate_anomaly", code = "# Calculate the anomalies of variables in your data set.", 
+            opts = list(label = "\"calculate_anomaly\"", exercise = "TRUE", 
+                excercise.setup = "\"list_files-setup\""), engine = "r")), 
+    code_check = NULL, error_check = NULL, check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "calculate_anomaly-check")), solution = NULL, 
+    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "calculate_anomaly", exercise = TRUE, 
-        excercise.setup = "plot_histogram", out.width.px = 624, 
-        out.height.px = 384, params.src = "calculate_anomaly, exercise=TRUE, excercise.setup=\"plot_histogram\"", 
-        fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "calculate_anomaly", exercise = TRUE, excercise.setup = "list_files-setup", 
+        code = "# Calculate the anomalies of variables in your data set.", 
+        out.width.px = 624, out.height.px = 384, params.src = "calculate_anomaly, exercise=TRUE, excercise.setup=\"list_files-setup\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 
 
@@ -1437,34 +1508,42 @@ output$`tutorial-exercise-plot_anomaly-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "plot_anomaly", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "plot_anomaly", code = "\n\n", opts = list(label = "\"plot_anomaly\"", 
-        exercise = "TRUE", excercise.setup = "\"calculate_anomaly\""), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "plot_anomaly-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"plot_anomaly-setup\""), engine = "r"), 
+        list(label = "plot_anomaly", code = "# Visualise the anomaly of your variables.", 
+            opts = list(label = "\"plot_anomaly\"", exercise = "TRUE", 
+                excercise.setup = "\"list_files\""), engine = "r")), 
+    code_check = NULL, error_check = NULL, check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "plot_anomaly-check")), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "plot_anomaly", exercise = TRUE, 
-        excercise.setup = "calculate_anomaly", out.width.px = 624, 
-        out.height.px = 384, params.src = "plot_anomaly, exercise=TRUE, excercise.setup=\"calculate_anomaly\"", 
-        fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "plot_anomaly", exercise = TRUE, excercise.setup = "list_files", 
+        code = "# Visualise the anomaly of your variables.", 
+        out.width.px = 624, out.height.px = 384, params.src = "plot_anomaly, exercise=TRUE, excercise.setup=\"list_files\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 
 
@@ -1477,34 +1556,42 @@ output$`tutorial-exercise-time_series-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "time_series", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "time_series", code = "\n\n", opts = list(label = "\"time_series\"", 
-        exercise = "TRUE", excercise.setup = "\"plot_anomaly\""), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "time_series-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"time_series-setup\""), engine = "r"), 
+        list(label = "time_series", code = "# Create a time series plot.", 
+            opts = list(label = "\"time_series\"", exercise = "TRUE", 
+                excercise.setup = "\"list_files-setup\""), engine = "r")), 
+    code_check = NULL, error_check = NULL, check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "time_series-check")), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "time_series", exercise = TRUE, 
-        excercise.setup = "plot_anomaly", out.width.px = 624, 
-        out.height.px = 384, params.src = "time_series, exercise=TRUE, excercise.setup=\"plot_anomaly\"", 
-        fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "time_series", exercise = TRUE, excercise.setup = "list_files-setup", 
+        code = "# Create a time series plot.", out.width.px = 624, 
+        out.height.px = 384, params.src = "time_series, exercise=TRUE, excercise.setup=\"list_files-setup\"", 
+        fig.num = 0, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 
 
@@ -1517,34 +1604,41 @@ output$`tutorial-exercise-playground-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "playground", global_setup = structure(c("library(learnr)", 
-"library(ggplot2)", "", "source_files_directory <- './data'", 
-"", "knitr::opts_chunk$set(error = TRUE)"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "playground", code = "\n\n", opts = list(label = "\"playground\"", 
-        exercise = "TRUE", excercise.setup = "\"time_series\""), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "workshop_1_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
+"library(ggplot2)", "library(rlang)", "", "source_files_directory <- './data'", 
+"setwd('.')", "", "work_env <<- new.env(parent = emptyenv())", 
+"", "exercise.checker <- function(user_code, ...) {", "  # Run the submitted code", 
+"  eval(parse(text = user_code))", "  list2env(as.list(environment(), all.names = TRUE), envir = work_env)", 
+"  return(list(message = \"Code executed\", correct = TRUE))", 
+"}", "", "tutorial_options(exercise.checker = exercise.checker)", 
+""), chunk_opts = list(label = "setup", include = FALSE)), setup = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+    chunks = list(list(label = "playground-setup", code = "list2env(as.list(work_env, all.names = TRUE), envir = environment())", 
+        opts = list(label = "\"playground-setup\""), engine = "r"), 
+        list(label = "playground", code = "", opts = list(label = "\"playground\"", 
+            exercise = "TRUE", excercise.setup = "\"list_files-setup\""), 
+            engine = "r")), code_check = NULL, error_check = NULL, 
+    check = structure("# Intentionally blank.", chunk_opts = list(
+        label = "playground-check")), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "workshop_1_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "workshop_1_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = TRUE, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, label = "playground", exercise = TRUE, 
-        excercise.setup = "time_series", out.width.px = 624, 
-        out.height.px = 384, params.src = "playground, exercise=TRUE, excercise.setup=\"time_series\"", 
-        fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
+        max.print = 1000, exercise.checker = "function (user_code, ...) \n{\n    eval(parse(text = user_code))\n    list2env(as.list(environment(), all.names = TRUE), envir = work_env)\n    return(list(message = \"Code executed\", correct = TRUE))\n}", 
+        label = "playground", exercise = TRUE, excercise.setup = "list_files-setup", 
+        code = "", out.width.px = 624, out.height.px = 384, params.src = "playground, exercise=TRUE, excercise.setup=\"list_files-setup\"", 
+        fig.num = 0L, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
 </script>
 </p>
 <!--html_preserve-->

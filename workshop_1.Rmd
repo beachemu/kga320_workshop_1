@@ -11,15 +11,28 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 library(learnr)
 library(ggplot2)
+library(rlang)
 
 source_files_directory <- './data'
+setwd('.')
 
-knitr::opts_chunk$set(error = TRUE)
+work_env <<- new.env(parent = emptyenv())
+
+exercise.checker <- function(user_code, ...) {
+  # Run the submitted code
+  eval(parse(text = user_code))
+  list2env(as.list(environment(), all.names = TRUE), envir = work_env)
+  return(list(message = "Code executed", correct = TRUE))
+}
+
+tutorial_options(exercise.checker = exercise.checker)
+
 ```
 
-## Introduction: R and Data Wrangling
 
-### \n
+
+
+## Introduction: R and Data Wrangling
 
 Hey there, **KGA320**! Today, we're diving into a tool that's revolutionised geography and beyond for the past 30 years: **R**. While creating statistical analyses in a coding language might seem daunting, you'll soon see how R makes our lives easier and more versatile. In fact, we wrote this entire workshop using R!
 
@@ -221,8 +234,6 @@ Remember, the grammar of graphics is great for goofballs like us! With a few twe
 
 ## Workshop: Data Visualization and Basic Statistics
 
-### 
-
 ### Testing your knowledge
 
 Before we start coding, let's test your knowledge of R and some basic commands with some multiple-choice questions:
@@ -292,7 +303,12 @@ The choice of location is completely up to you. Consider researching the news an
 
 We can use the function [`list.files`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/list.files) to see the data we have available in this workshop. `list.files` works like many of the functions we used in the introduction. We want to see the data available in the `data` folder, so that folder will be the input for the `list.files` function as a string. Try using the function from scratch here:
 
-```{r list_files, exercise=TRUE, excercise.setup="call_libraries"}
+```{r list_files-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
+```
+
+```{r list_files, exercise=TRUE, excercise.setup="list_files-setup"}
+# Use list.files() to find the data to use in this workshop.
 ```
 
 ```{r list_files-hint-1}
@@ -300,27 +316,46 @@ list.files("...")
 ```
 
 ```{r list_files-hint-2}
-list.files("data/")
+list.files("./data")
 ```
+
+```{r list_files-check}
+# Intentionally blank.
+```
+
 
 > 💡 **Pro tip:** Click the "Hint" button if you're ever stuck, or click "Start Over" to start from scratch.
 
 We can see a data file is available for each region and one for the Barossa Valley that we used in the introduction. Try loading one of these data sets and checking its structure here.
 
-```{r load_data, exercise=TRUE, excercise.setup="list_files"}
+```{r load_data_ex-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
 ```
 
-```{r load_data-hint-1}
+```{r load_data_ex, exercise=TRUE}
+# Read in a CSV file from the list chosen above.
+```
+
+```{r load_data_ex-hint-1}
 read.csv()
 ```
 
-```{r load_data-hint-2}
+```{r load_data_ex-hint-2}
 read.csv("data/")
+```
+
+```{r load_data_ex-check}
+# Intentionally blank.
 ```
 
 The dataset you have loaded is now ready for analysis, as we did in the introduction. In the next code section, calculate the mean, median, and standard deviation of maximum and minimum daily temperature, and precipitation. Use `cat` to print these results together as output from the code box.
 
-```{r basic_stats, exercise=TRUE, excercise.setup="load_data"}
+```{r basic_stats-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
+```
+
+```{r basic_stats, exercise=TRUE, excercise.setup="list_files-setup"}
+# Calculate and print some basic statistics for your data set.
 ```
 
 ```{r basic_stats-hint-1}
@@ -337,6 +372,10 @@ mean(..., na.rm = TRUE)
 cat("Mean:", ..., "\n")
 ```
 
+```{r basic_stats-check}
+# Intentionally blank.
+```
+
 > 🔎 **Questions to consider for your report**: Use the answers to these questions as the formative thinking for your report. Don't rely on them. Think for yourself!
 >
 > -   Can we infer anything from these initial statistics?
@@ -344,7 +383,12 @@ cat("Mean:", ..., "\n")
 
 Now, we should create some visualisations of our data. In the introduction, we created box plots. Box plots are interesting but are not the best we can do to visualise this data. Even changing to a violin plot or overlaying a jittered strip plot can be an easy improvement. In the next exercise, you will create a histogram for each variable. Remember to use the [ggplot cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf) to find the right function to fit the grammar of graphics. Google is your friend! Does a histogram provide insight that is different from the boxplot? Are there other histograms that could be made to visualise aspects of the data?
 
-```{r plot_histogram, exercise=TRUE, excercise.setup="basic_stats"}
+```{r plot_histogram-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
+```
+
+```{r plot_histogram, exercise=TRUE, excercise.setup="list_files-setup"}
+# Plot a labelled and titled histogram of a variable in your data set. 
 ```
 
 ```{r plot_histogram-hint-1}
@@ -356,18 +400,40 @@ ggplot(..., aes(x=...)) +
   geom_histogram()
 ```
 
+```{r plot_histogram-check}
+# Intentionally blank.
+```
+
 Through these different plots we are beginning to build up a picture of the climate of your chosen region. So far, we've used the simple inferential statistics of mean, median, and standard deviation. As we go on, we will start using more complicated statistics. One measure of interest is **anomalies**, how much a measurement deviates from the mean. We can calculate an anomaly by applying a calculation across a column in a data frame. For example, for a data frame `df` with column `temp` that has mean stored in `mean_temp`, we can calculate the anomaly for each `temp` measurement and store it in the data frame with `df$temp_anomaly <- df$temp - mean_temp`. Using this formula, calculate the anomalies for your variables in the code box below.
 
-```{r calculate_anomaly, exercise=TRUE, excercise.setup="plot_histogram"}
+```{r calculate_anomaly-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
+```
+
+```{r calculate_anomaly, exercise=TRUE, excercise.setup="list_files-setup"}
+# Calculate the anomalies of variables in your data set.
+```
+
+```{r calculate_anomaly-check}
+# Intentionally blank.
 ```
 
 Now, try using some of the plots we have learned so far to visualise the anomaly.
 
-```{r plot_anomaly, exercise=TRUE, excercise.setup="calculate_anomaly"}
+```{r plot_anomaly-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
+```
+
+```{r plot_anomaly, exercise=TRUE, excercise.setup="list_files"}
+# Visualise the anomaly of your variables.
 ```
 
 ```{r plot_anomaly-hint-1}
 # Try geom_histogram!
+```
+
+```{r plot_anomaly-check}
+# Intentionally blank.
 ```
 
 > 🔎 **Questions to consider for your report**:
@@ -379,7 +445,16 @@ We've reached the end. Great job on making it through our first R workshops for 
 
 So far, our plots have completely ignored a key aspect of our data - the progression of time. The study of climate revolves around how Earth's systems change over time, so we need to learn how to conduct **time-series analysis**. In the following exercise box, try building a plot with time on the x-axis and one of the available variables on the y-axis. Try using `geom_point`!
 
-```{r time_series, exercise=TRUE, excercise.setup="plot_anomaly"}
+```{r time_series-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
+```
+
+```{r time_series, exercise=TRUE, excercise.setup="list_files-setup"}
+# Create a time series plot.
+```
+
+```{r time_series-check}
+# Intentionally blank.
 ```
 
 ```{r time_series-hint-1}
@@ -397,14 +472,14 @@ If you've done things right, this plot will look... uninformative. It will be ve
 
 If you have extra time, or want to build on the work you've done so far, use the code box below.
 
-```{r playground, exercise=TRUE, excercise.setup="time_series"}
+```{r playground-setup}
+list2env(as.list(work_env, all.names = TRUE), envir = environment())
 ```
 
-```{r}
-# Plot trends
-ggplot(barossa_data, aes(x = time, y = tasmax)) +  # Specify the data and mapping of aesthetics
-  geom_point() +  # Add a line plot layer
-  ggtitle("trend of maximum temperature (1951-2014)") +  # add a title to the plot
-  xlab("Year") +  # Label the x-axis
-  ylab("maximum temperature (°c)")  # label the y-axis
+```{r playground, exercise=TRUE, excercise.setup="list_files-setup"}
+
+```
+
+```{r playground-check}
+# Intentionally blank.
 ```
