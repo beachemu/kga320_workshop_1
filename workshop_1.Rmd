@@ -284,7 +284,7 @@ You will need a region to focus on for your workshop portfolio, and data from th
 3.  Murray Basin, Victoria and South Australia
 4.  Southern Slopes, Tasmania
 
-The choice of location is completely up to you. Consider researching the news and history of each region to inform your final choice. **You cannot pick the Barossa Valley!** We use the Barossa Valley as an example data set, not for the reports.
+You have been allocated a region in MyLo. Consider research into the news and history of your region to develop context and understanding. **You cannot pick the Barossa Valley!** We use the Barossa Valley as an example data set, not for the reports.
 
 We can use the function [`list.files`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/list.files) to see the data we have available in this workshop. `list.files` works like many of the functions we used in the introduction. We want to see the data available in the `data` folder, so that folder will be the input for the `list.files` function as a string. Let's try it now:
 
