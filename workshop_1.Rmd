@@ -48,7 +48,7 @@ Now, you might be wondering...
 > -   Different laptops and operating systems can introduce complications that might distract from learning to code.
 > -   Our goal is to keep things simple and focus on the joy of coding!
 
-Don't worry, though - if you're curious about RStudio:
+However, if you're curious about RStudio:
 
 1.  UTAS computers have RStudio installed.
 2.  We've shared the source code for these workshops on MyLo.
